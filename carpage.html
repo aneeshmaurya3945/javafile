@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars</title>
+    <link rel="stylesheet" href="./allcarspages.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    
+    <header>
+        <h1>Cars</h1>
+    </header>
+
+    <section class="vehicle-grid">
+        <div class="vehicle-card">
+            <img src="assets/bmwi8.png" alt="Car 1">
+            <h3>Car 1</h3>
+            <p>Description of Car 1</p>
+            <button onclick="openModal()">Book Now</button>
+        </div>
+        <div class="vehicle-card">
+            <img src="assets/BMWM4.png" alt="Car 2">
+            <h3>Car 2</h3>
+            <p>Description of Car 2</p>
+            <button onclick="openModal()">Book Now</button>
+        </div>
+        <div class="vehicle-card">
+            <img src="assets/jagwarxf.png" alt="Car 3">
+            <h3>Car 3</h3>
+            <p>Description of Car 3</p>
+            <button onclick="openModal()">Book Now</button>
+        </div>
+        
+        <!-- Add more car entries as needed -->
+    </section>
+    
+    <section class="vehicle-grid">
+        <div class="vehicle-card">
+            <img src="assets/Ferrari.png" alt="Car 1">
+            <h3>Car 1</h3>
+            <p>Description of Car 1</p>
+            <button onclick="openModal()">Book Now</button>
+        </div>
+        <div class="vehicle-card">
+            <img src="assets/NissanGtr.png" alt="Car 2">
+            <h3>Car 2</h3>
+            <p>Description of Car 2</p>
+            <button onclick="openModal()">Book Now</button>
+        </div>
+        <div class="vehicle-card">
+            <img src="assets/PorscheCayman.png" alt="Car 3">
+            <h3>Car 3</h3>
+            <p>Description of Car 3</p>
+            <button onclick="openModal()">Book Now</button>
+        </div>
+        
+        <!-- Add more car entries as needed -->
+    </section>
+    <section class="vehicle-grid">
+        <div class="vehicle-card">
+            <img src="assets/lamborghiniAventador.png" alt="Car 1">
+            <h3>Car 1</h3>
+            <p>Description of Car 1</p>
+            <button onclick="openModal()">Book Now</button>
+        </div>
+        <div class="vehicle-card">
+            <img src="assets/mercedesBenzCClass.png" alt="Car 2">
+            <h3>Car 2</h3>
+            <p>Description of Car 2</p>
+            <button onclick="openModal()">Book Now</button>
+        </div>
+        <div class="vehicle-card">
+            <img src="assets/mercedesBenzEClass.png" alt="Car 3">
+            <h3>Car 3</h3>
+            <p>Description of Car 3</p>
+            <button onclick="openModal()">Book Now</button>
+        </div>
+        
+        <!-- Add more car entries as needed -->
+    </section>
+
+    <!-- Modal for booking form -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Book Your Car</h2>
+            <form>
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" placeholder="Enter location" required><br>
+
+                <label for="startDate">Start Date:</label>
+                <input type="date" id="startDate" name="startDate" required><br>
+
+                <label for="endDate">End Date:</label>
+                <input type="date" id="endDate" name="endDate" required><br>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Car Rental</p>
+    </footer>
+
+    <script>
+        // Function to open the booking modal
+        function openModal() {
+            document.getElementById('bookingModal').style.display = 'block';
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            document.getElementById('bookingModal').style.display = 'none';
+        }
+
+        // Close the modal if user clicks outside of it
+        window.onclick = function(event) {
+            var modal = document.getElementById('bookingModal');
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

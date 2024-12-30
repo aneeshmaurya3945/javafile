@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars</title>
+    <link rel="stylesheet" href="./newallcarspages.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    
+    <header>
+        <h1>Cars</h1>
+    </header>
+
+    <!-- New Header with Navigation and Search Bar -->
+    <header class="main-header">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#rent">Rent</a></li>
+          <li><a href="#ride">Ride</a></li>
+          <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <!-- Search Bar -->
+        <input type="text" id="carSearch" placeholder="Search cars by name..." onkeyup="filterCars()">
+    </header>
+
+    <section class="vehicle-grid" id="carContainer">
+        <div class="vehicle-card">
+            <img src="assets/cars-audi-a8.jpg" alt="Car 1">
+            <h3>Audi A8</h3>
+            <p>Seating Capacity:5 <br>
+                Milage:12<br>
+                Top-Speed:250 Kmph
+            <h3>RS 15000/Day</h3>
+            </p>
+            <button onclick="openModal()">Book Now</button>
+        </div>
+        <div class="vehicle-card">
+            <img src="assets/cars-bmw-series3.avif" alt="Car 2">
+            <h3>BMW Series 3</h3>
+            <p>Seating Capacity:5 <br>
+                Milage:15<br>
+                Top-Speed:270 Kmph
+            <h3>RS 14000/Day</h3></p>
+            <button onclick="openModal()">Book Now</button>
+        </div>
+        <div class="vehicle-card">
+            <img src="assets/cars-lexus-es.jpg" alt="Car 3">
+            <h3>Lexus ES</h3>
+            <p>Seating Capacity:4 <br>
+                Milage:10<br>
+                Top-Speed:200 Kmph
+            <h3>RS 10000/Day</h3></p>
+            <button onclick="openModal()">Book Now</button>
+        </div>
+    </section>
+    <section class="vehicle-grid">
+        <div class="vehicle-card">
+            <img src="assets/cars-Mercedes-Maybach-S680-1.avif" alt="Car 4">
+            <h3>Mercedes Maybach S680</h3>
+            <p>Seating Capacity:4 <br>
+                Milage:12<br>
+                Top-Speed:270 Kmph
+            <h3>RS 20000/Day</h3></p>
+            <button onclick="openModal()">Book Now</button>
+        </div>
+        <div class="vehicle-card">
+            <img src="assets/cars_volvo_s90.avif" alt="Car 5">
+            <h3>Volvo S90</h3>
+            <p>Seating Capacity:5 <br>
+                Milage:8<br>
+                Top-Speed:320 Kmph
+            <h3>RS 11000/Day</h3></p>
+            <button onclick="openModal()">Book Now</button>
+        </div>
+        <div class="vehicle-card">
+            <img src="assets/cars-jaguar-xf.webp" alt="Car 6">
+            <h3>Jaguar XF</h3>
+            <p>Seating Capacity:2 <br>
+                Milage:18<br>
+                Top-Speed:420 Kmph
+            <h3>RS 18000/Day</h3></p>
+            <button onclick="openModal()">Book Now</button>
+        </div>
+    </section>
+
+    <!-- Modal for booking form -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Book Your Car</h2>
+            <form>
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" placeholder="Enter location" required><br>
+
+                <label for="startDate">Start Date:</label>
+                <input type="date" id="startDate" name="startDate" required><br>
+
+                <label for="endDate">End Date:</label>
+                <input type="date" id="endDate" name="endDate" required><br>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Car Rental</p>
+    </footer>
+
+    <script>
+        // Function to open the booking modal
+        function openModal() {
+            document.getElementById('bookingModal').style.display = 'block';
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            document.getElementById('bookingModal').style.display = 'none';
+        }
+
+        // Close the modal if user clicks outside of it
+        window.onclick = function(event) {
+            var modal = document.getElementById('bookingModal');
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Function to filter cars based on search input
+        function filterCars() {
+            let input = document.getElementById('carSearch').value.toUpperCase();
+            let carContainer = document.getElementById('carContainer');
+            let cards = carContainer.getElementsByClassName('vehicle-card');
+
+            for (let i = 0; i < cards.length; i++) {
+                let h3 = cards[i].getElementsByTagName('h3')[0];
+                if (h3.innerHTML.toUpperCase().indexOf(input) > -1) {
+                    cards[i].style.display = '';
+                } else {
+                    cards[i].style.display = 'none';
+                }
+            }
+        }
+    </script>
+</body>
+</html>
